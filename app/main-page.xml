@@ -1,0 +1,48 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:lv="nativescript-pro-ui/listview"
+      navigatingTo="navigatingTo"
+      class="page">
+
+    <Page.actionBar>
+        <ActionBar title="TextView inside RadListView" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <lv:RadListView items="{{ items }}"
+                    itemTap="onItemTap"
+                    selectionBehavior="None"
+                    itemSwipeProgressEnded="onSwipeCellFinished"
+                    itemSwipeProgressStarted="onSwipeCellStarted"
+                    itemSwipeProgressChanged="onSwipeCellProgressChanged"
+                    itemSwiping="onItemSwiping"
+                    swipeActions="true">
+        <lv:RadListView.listViewLayout>
+            <lv:ListViewLinearLayout scrollDirection="Vertical" itemHeight="auto"/>
+        </lv:RadListView.listViewLayout>
+        <lv:RadListView.itemTemplate>
+            <StackLayout orientation="horizontal"
+                         padding="4 8"
+                         borderBottomWidth="1"
+                         borderBottomColor="#5f9ea0"
+                         backgroundColor="#f0f8ff">
+                <Label text="{{ value }}" width="50%" verticalAlignment="center"/>
+                <TextField text="{{ quantity }}"
+                           autocorrect="false"
+                           autocapitalizationType="none"
+                           keyboardType="number"
+                           returnKeyType="done"
+                           maxLength="2"
+                           width="50%" />
+            </StackLayout>
+        </lv:RadListView.itemTemplate>
+        <lv:RadListView.itemSwipeTemplate>
+            <GridLayout columns="auto * auto">
+                <Label id="edit" text="Edit"
+                       col="0" backgroundColor="green" padding="4 12" tap="onEditItemTap" />
+                <Label id="delete" text="Delete"
+                       col="2" backgroundColor="red" padding="4 6" tap="onDeleteItemTap" />
+            </GridLayout>
+        </lv:RadListView.itemSwipeTemplate>
+    </lv:RadListView>
+
+</Page>
