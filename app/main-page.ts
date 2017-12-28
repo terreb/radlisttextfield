@@ -13,6 +13,10 @@ export function onItemTap( args ) {
     console.dir( args.view.bindingContext )
 }
 
+export function onLabelTap() {
+    console.log('on label tap')
+}
+
 // Processing the itemSwipeProgressStartedEvent to limit the swiping distance
 export function onSwipeCellStarted( args ) {
     const swipeLimits = args.data.swipeLimits

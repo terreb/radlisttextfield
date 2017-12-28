@@ -25,7 +25,7 @@
                          borderBottomWidth="1"
                          borderBottomColor="#5f9ea0"
                          backgroundColor="#f0f8ff">
-                <Label text="{{ value }}" width="50%" verticalAlignment="center"/>
+                <Label text="{{ value }}" width="50%" verticalAlignment="center" tap="onLabelTap"/>
                 <TextField text="{{ quantity }}"
                            autocorrect="false"
                            autocapitalizationType="none"
