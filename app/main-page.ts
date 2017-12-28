@@ -10,7 +10,7 @@ export function navigatingTo( args: EventData ) {
 }
 
 export function onItemTap( args ) {
-    console.dir( args.view.bindingContext )
+    // console.dir( args.view.bindingContext )
 }
 
 export function onLabelTap() {
